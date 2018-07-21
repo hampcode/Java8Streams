@@ -19,11 +19,11 @@ Stream en Java 8 es una alternativa mucho mas conveniente para poder iterar sobr
 
 Con respecto a las operaciones que se realizan son de 2 tipos.
  * Operaciones intermedias: Que pueden ser de filtrado o transformación. 
- * Operacion terminal Que producen un resultado.
+ * Operacion terminal: Que producen un resultado.
 
 Las operaciones intermedias son **lazy** porque se realizan cuando se invoca a la operacion final y  no necesitan en algunos casos procesar todos los elementos del stream para obtener un resultado.
 
-Con respecto a la iteracion sobre los elementos de un stream se expresa de forma interna a diferencia de una coleccion donde lo expresamos de forma externa. Ejemplo de iteracion de un stream.
+Con respecto a la iteracion sobre los elementos de un stream se expresa de forma interna a diferencia de una coleccion donde lo expresamos de forma externa. 
 
 ```java
 List<integer> numbersGreaterThan5 = numbers
