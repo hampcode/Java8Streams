@@ -18,8 +18,8 @@ Java 8 representa una evolución notable en este lenguaje de programación. Para
 Stream en Java 8 es una alternativa mucho mas conveniente para poder iterar sobre una coleccion de datos de una manera declarativa. La ventaja de los streams es que pueden procesarse de forma serializada o paralela y proporcionan un estilo de operaciones mas funcionales.
 
 Con respecto a las operaciones que se realizan son de 2 tipos.
- * Operaciones intermedias: Que pueden ser de filtrado o transformación. 
- * Operacion terminal: Que producen un resultado.
+ * Operaciones intermedias: realizan filtrado o transformación. 
+ * Operacion terminal: producen un resultado.
 
 Las operaciones intermedias son **lazy** porque se realizan cuando se invoca a la operacion final y  no necesitan en algunos casos procesar todos los elementos del stream para obtener un resultado.
 
