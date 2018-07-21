@@ -120,8 +120,8 @@ El método ``match`` recibe un ``Predicate``. Hay de 3 tipos.
 
  * Comprobar si hay algun numero mayor que 4.
  * Comprobar si todos lo numeros son pares.
- * Comprobar si hay un numero no para.
- 1
+ * Comprobar si hay un numero no par.
+ 
 
 ```java
         public static boolean checkIfThereIsANumberGreaterThan4(List<Integer> numbers)  {
