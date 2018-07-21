@@ -34,21 +34,41 @@ List<integer> numbersGreaterThan5 = numbers
 ```
 ---
 
-## 3. Filtrado: filter(Predicate)
+## 3. filter(Predicate)
 Sirve para devolver otro Stream con sólo aquellos elementos que cumplen el predicado.
  * Filtrar todos los numeros que son mayores que 5.
  * Filtrar todos los numeros pares.
 
 ```java
-        public static List<Integer> filterAllNumbersGreaterThan5AndDividedBy2() {
-		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-
-                List<Integer> numbersGreaterThan5AndDividedBy2 = numbers
+        public static List<Integer> filterAllNumbersGreaterThan5AndDividedBy2(List<Integer> numbers) {
+	        List<Integer> numbersGreaterThan5AndDividedBy2 = numbers
                                 .stream()
                                 .filter(number -> number > 5)
                                 .filter(number -> number % 2 == 0)
                                 .collect(Collectors.toList());
 		return numbersGreaterThan5AndDividedBy2;
+	}
+```
+---
+
+## 3. map(Function)
+Este método es realmente una familia de métodos con sus adaptaciones mapToInt (ToIntFunction), mapToLong (ToLongFunction) y mapToDouble (ToDoubleFunction)  devolviendo un Stream de objetos de otro tipo obtenidos a partir del tipo base aplicando una Function. 
+ * Multiplicar cada numero por 2.
+ * Transformar cada numero a un string.
+
+```java
+        public static List<String>  multiplyEachElementBy2UsingLambdaExpression(List<Integer> numbers) {
+	    Function<Integer, Integer> multiplyBy2 = number -> number * 2;
+	    Function<Integer, String> transformIntoString = number -> String.valueOf(number);
+	 
+	    List<String> multipliedNumbersAsString = numbers
+	        .stream()
+	        .map(multiplyBy2)
+	        .map(transformIntoString)
+	        .collect(Collectors.toList());
+	 
+	    return multipliedNumbersAsString;
+	
 	}
 ```
 ---
