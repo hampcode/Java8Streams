@@ -111,3 +111,46 @@ Lo mejor será revisar la documentación de la interfaz [Comparator](https://doc
 
 ```
 ---
+
+## 4. match(Predicate)
+El método ``match`` recibe un ``Predicate``. Hay de 3 tipos.
+- ``anyMatch()`` Devuelve un valor de cierto si algún elemento de una colección cumple una condición.
+- ``allMatch()`` Devuelve un valor de cierto si todos los elementos de una colección cumplen una condición
+- ``noneMatch``  Devuelve un valor de cierto si ninguno de los elemento de una colección cumple una condición.
+
+ * Comprobar si hay algun numero mayor que 4.
+ * Comprobar si todos lo numeros son pares.
+ * Comprobar si hay un numero no para.
+ 1
+
+```java
+        public static boolean checkIfThereIsANumberGreaterThan4(List<Integer> numbers)  {
+            
+            boolean anyNumberGreaterThan4 = numbers
+	        .stream()
+	        .anyMatch(number -> number > 4);
+	 
+	    return anyNumberGreaterThan4;
+	}
+	
+	public static boolean checkIfEachNumberIsPair(List<Integer> numbers)  {
+	 
+	    boolean eachNumberIsPair = numbers
+	        .stream()
+	        .allMatch(number -> number % 2 == 0);
+	 
+	    return eachNumberIsPair;
+	}
+
+	public static boolean checkIfEachNumberIsNotPair(List<Integer> numbers)  {
+	    
+	    boolean eachNumberIsNotPair = numbers
+	        .stream()
+	        .noneMatch(number -> number % 2 == 0);
+	 
+	    return eachNumberIsNotPair;
+	}
+
+```
+---
+
