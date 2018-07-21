@@ -7,8 +7,24 @@ public class Product {
     private int category;
     private double unitPrice;
     private int unitsInStock;
+    
+    
 
-    public int getId() {
+    public Product() {
+		super();
+	}
+
+	public Product(int id, String name, int supplier, int category, double unitPrice, int unitsInStock) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.supplier = supplier;
+		this.category = category;
+		this.unitPrice = unitPrice;
+		this.unitsInStock = unitsInStock;
+	}
+
+	public int getId() {
         return id;
     }
 

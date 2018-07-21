@@ -29,7 +29,7 @@ public class MainProducts {
 		
 //		System.out.println(getMaxUnitPriceProduct(products).get());
 		
-		System.out.println( getStatisticsUnitPrice(products));
+//		System.out.println( getStatisticsUnitPrice(products));
 		
 		
 

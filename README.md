@@ -192,7 +192,21 @@ Operaciones como sum, max, min, avg, group by, etc., Se especifican en el métod
 
 Lo mejor será revisar la documentación de la interfaz [Collectors](http://www.baeldung.com/java-8-collectors)
 
-Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``.
+Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La clase ``Product`` tiene los siguientes atributos.
+
+```java
+   public class Product {
+    private int id;
+    private String name;
+    private int supplier;
+    private int category;
+    private double unitPrice;
+    private int unitsInStock;
+    ....
+
+  }
+```
+---
 
 ### 6.1. Collectors.groupingBy() 
  * Filtrar todos los productos que en almacen tengan menos de 20 unidades de stock y agrupados por unidades de stock,
