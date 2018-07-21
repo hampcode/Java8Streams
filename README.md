@@ -36,9 +36,8 @@ List<integer> numbersGreaterThan5 = numbers
 
 ## 3. Filtrado: filter(Predicate)
 Sirve para devolver otro Stream con sólo aquellos elementos que cumplen el predicado.
-
->Filtrar todos los numeros que son mayores que 5.
->Filtrar todos los numeros pares.
+ * Filtrar todos los numeros que son mayores que 5.
+ * Filtrar todos los numeros pares.
 
 ```java
         public static List<Integer> filterAllNumbersGreaterThan5AndDividedBy2() {
