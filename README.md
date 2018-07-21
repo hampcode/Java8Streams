@@ -154,3 +154,34 @@ El método ``match`` recibe un ``Predicate``. Hay de 3 tipos.
 ```
 ---
 
+## 5. limit(long n)/skip(long n)
+Los métodos ``limit`` y ``skip`` recibes un ``long``.
+- ``limit(long n)`` Devuelve una secuencia reducida de los primeros n elementos. Este método generará una excepción si n es negativo.
+- ``skip(long n)`` Devuelve una secuencia de elementos restantes después de saltar los primeros n elementos. Este método generará una excepción si n es negativo.
+
+
+```java
+    public static List<Integer> getLimitNumbers(List<Integer> numbers)  {
+	    
+		List<Integer> numberLimit = numbers
+				.stream()
+				.limit(3)
+				.collect(Collectors.toList());
+
+	 
+	    return numberLimit;
+	}
+
+	public static List<Integer> getSkipNumbers(List<Integer> numbers)  {
+	    
+		List<Integer> numberSkip = numbers
+				.stream()
+				.skip(3)
+				.collect(Collectors.toList());
+	 
+	    return numberSkip;
+	}
+
+```
+---
+

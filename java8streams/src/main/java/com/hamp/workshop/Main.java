@@ -15,27 +15,40 @@ public class Main {
 //		List<String> listOfWords = Arrays.asList("B", "A", "D", "E", "C");
 //		System.out.println("original words list: " + listOfWords);
 		
-		
+		//filter(Predicate)
 //		List<Integer> numbersfilter=filterAllNumbersGreaterThan5AndDividedBy2(numbers);
 //		System.out.println("processed numbers list: " + numbersfilter);
 		
+		
+		//map(Function)
 //		List<String> numbersMap=multiplyEachElementBy2UsingLambdaExpression(numbers);
 //		System.out.println("processed numbers list: " + numbersMap);
 		
+		
+		//sorted(Comparator)
 //		List<String> wordsSorted=sortTheList(listOfWords);
 //		System.out.println("processed words list: " + wordsSorted);
 		
 //		List<String> wordsSortedWithInversedComparator=sortTheListWithInversedComparator(listOfWords);
 //		System.out.println("processed words list inversed: " + wordsSortedWithInversedComparator);
 		
-		boolean numbersNumberGreaterThan4=checkIfThereIsANumberGreaterThan4(numbers);
-		System.out.println("processed list: " + numbersNumberGreaterThan4);
+		//match(Predicate)
+//		boolean numbersNumberGreaterThan4=checkIfThereIsANumberGreaterThan4(numbers);
+//		System.out.println("processed list: " + numbersNumberGreaterThan4);
+//		
+//		boolean numbersNumberIsPair=checkIfEachNumberIsPair(numbers);
+//		System.out.println("processed list: " + numbersNumberIsPair);
+//		
+//		boolean numbersNumberIsNotPair=checkIfEachNumberIsNotPair(numbers);
+//		System.out.println("processed list: " + numbersNumberIsNotPair);
 		
-		boolean numbersNumberIsPair=checkIfEachNumberIsPair(numbers);
-		System.out.println("processed list: " + numbersNumberIsPair);
 		
-		boolean numbersNumberIsNotPair=checkIfEachNumberIsNotPair(numbers);
-		System.out.println("processed list: " + numbersNumberIsNotPair);
+		//limit(long n)/skip(long n)
+		List<Integer> limitNumbers=getLimitNumbers(numbers);
+		System.out.println("processed numbers list: " + limitNumbers);
+		
+		List<Integer> skipNumbers=getSkipNumbers(numbers);
+		System.out.println("processed numbers list: " + skipNumbers);
 		
 		
 	}
@@ -121,6 +134,27 @@ public class Main {
 	    return eachNumberIsNotPair;
 	}
 
+	//limit(long n)/skip(long n)
+	public static List<Integer> getLimitNumbers(List<Integer> numbers)  {
+	    
+		List<Integer> numberLimit = numbers
+				.stream()
+				.limit(3)
+				.collect(Collectors.toList());
 
+	 
+	    return numberLimit;
+	}
+
+	
+	public static List<Integer> getSkipNumbers(List<Integer> numbers)  {
+	    
+		List<Integer> numberSkip = numbers
+				.stream()
+				.skip(3)
+				.collect(Collectors.toList());
+	 
+	    return numberSkip;
+	}
 
 }
