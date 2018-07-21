@@ -44,7 +44,7 @@ El método ``filter`` recibe un ``Predicate``. Sirve para devolver otro Stream c
 ```
 ---
 
-## 3. map(Function)
+## 4. map(Function)
 El método ``map`` recibe un ``Function``. Tiene sus adaptaciones mapToInt (ToIntFunction), mapToLong (ToLongFunction) y mapToDouble (ToDoubleFunction)  devolviendo un Stream de objetos de otro tipo obtenidos a partir del tipo base aplicando una Function. 
  * Multiplicar cada numero por 2.
  * Transformar cada numero a un string.
@@ -66,7 +66,7 @@ El método ``map`` recibe un ``Function``. Tiene sus adaptaciones mapToInt (ToIn
 ```
 ---
 
-## 4. sorted(Comparator)
+## 5. sorted(Comparator)
 El método ``sorted`` recibe un ``Comparator``. Ésta misma interfaz ``Comparator`` tiene algunos métodos que nos serán de gran ayuda
 
 - ``comparingInt()`` Permite comparar elementos de tipo int
@@ -105,7 +105,7 @@ Lo mejor será revisar la documentación de la interfaz [Comparator](https://doc
 ```
 ---
 
-## 4. match(Predicate)
+## 6. match(Predicate)
 El método ``match`` recibe un ``Predicate``. Hay de 3 tipos.
 - ``anyMatch()`` Devuelve un valor de cierto si algún elemento de una colección cumple una condición.
 - ``allMatch()`` Devuelve un valor de cierto si todos los elementos de una colección cumplen una condición
@@ -147,7 +147,7 @@ El método ``match`` recibe un ``Predicate``. Hay de 3 tipos.
 ```
 ---
 
-## 5. limit(long n)/skip(long n)
+## 7. limit(long n)/skip(long n)
 Los métodos ``limit`` y ``skip`` recibes un ``long``.
 - ``limit(long n)`` Devuelve una secuencia reducida de los primeros n elementos. Este método generará una excepción si n es negativo.
 - ``skip(long n)`` Devuelve una secuencia de elementos restantes después de saltar los primeros n elementos. Este método generará una excepción si n es negativo.
@@ -179,7 +179,7 @@ Los métodos ``limit`` y ``skip`` recibes un ``long``.
 ---
 
 
-## 6. collect(Collectors)
+## 8. collect(Collectors)
 Operaciones como sum, max, min, avg, group by, etc., Se especifican en el método ``collect``.
 
 - ``Collectors.toList()`` Permite recopilar todos los elementos de un Stream en una instancia de List.
@@ -208,7 +208,7 @@ Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La
 ```
 ---
 
-### 6.1. Collectors.groupingBy() 
+### 8.1. Collectors.groupingBy() 
  * Filtrar todos los productos que en almacen tengan menos de 20 unidades de stock y agrupados por unidades de stock,
 
 ```java
@@ -221,7 +221,7 @@ Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La
 ```
 
 
-### 6.2. Collectors.counting() 
+### 8.2. Collectors.counting() 
  * Obtener el número de productos agrupados por proveedor.
 
 ```java
@@ -238,7 +238,7 @@ Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La
 	}
 ```
 
-### 6.3. Collectors.summarizingDouble/Long/Int()
+### 8.3. Collectors.summarizingDouble/Long/Int()
  * Obtener la suma del precio unitario de todos los productos agrupados por el número de stock en el almacen.
  * Obtener estas estadísticas respecto al precio unitario
 
@@ -267,7 +267,7 @@ Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La
 	}
 ```
 
-### 6.4. Collectors.averagingDouble/Long/Int()
+### 8.4. Collectors.averagingDouble/Long/Int()
  * Obtener el promedio de stock en almacen
 
 ```java
@@ -279,7 +279,7 @@ Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La
 				return average;
 	}
 ```
-### 6.5. Collectors.max()/min()
+### 8.5. Collectors.max()/min()
  * Producto con el precio unitario más alto
 
 ```java
@@ -293,7 +293,7 @@ Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``, La
 ```
 ---
 
-## 7. Referencias
+## 9. Referencias
  * [Oracle Java SE -1](https://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html)
  * [Oracle Java SE -1](http://www.oracle.com/technetwork/articles/java/architect-streams-pt2-2227132.html)
  * [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html).
