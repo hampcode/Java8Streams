@@ -35,7 +35,7 @@ List<integer> numbersGreaterThan5 = numbers
 ---
 
 ## 3. filter(Predicate)
-Sirve para devolver otro Stream con sólo aquellos elementos que cumplen el predicado.
+El método ``filter`` recibe un ``Predicate``. Sirve para devolver otro Stream con sólo aquellos elementos que cumplen el predicado.
  * Filtrar todos los numeros que son mayores que 5.
  * Filtrar todos los numeros pares.
 
@@ -52,7 +52,7 @@ Sirve para devolver otro Stream con sólo aquellos elementos que cumplen el pred
 ---
 
 ## 3. map(Function)
-Este método es realmente una familia de métodos con sus adaptaciones mapToInt (ToIntFunction), mapToLong (ToLongFunction) y mapToDouble (ToDoubleFunction)  devolviendo un Stream de objetos de otro tipo obtenidos a partir del tipo base aplicando una Function. 
+El método ``map`` recibe un ``Function``. Tiene sus adaptaciones mapToInt (ToIntFunction), mapToLong (ToLongFunction) y mapToDouble (ToDoubleFunction)  devolviendo un Stream de objetos de otro tipo obtenidos a partir del tipo base aplicando una Function. 
  * Multiplicar cada numero por 2.
  * Transformar cada numero a un string.
 
@@ -70,5 +70,44 @@ Este método es realmente una familia de métodos con sus adaptaciones mapToInt 
 	    return multipliedNumbersAsString;
 	
 	}
+```
+---
+
+## 4. sorted(Comparator)
+El método ``sorted`` recibe un ``Comparator``. Ésta misma interfaz ``Comparator`` tiene algunos métodos que nos serán de gran ayuda
+
+- ``comparingInt()`` Permite comparar elementos de tipo int
+- ``comparingDouble()`` Permite comparar elementos de tipo double
+- ``comparingLong()`` Permite comparar elementos de tipo long
+- ``thenComparing()`` Permite anidar comparaciones. Útil cuándo deseamos ordenar por más de 1 atributo.
+
+Lo mejor será revisar la documentación de la interfaz [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) y otros ejemplos [Comparator-Comparing](http://www.baeldung.com/java-8-comparator-comparing)
+
+ * Listar ordenada.
+ * Lista ordenada utilizando comparator.
+
+```java
+        public static List<String> sortTheList(List<String> listOfWords)  {
+	    
+	    List<String> sortedList = listOfWords
+	        .stream()
+	        .sorted()
+	        .collect(Collectors.toList());
+	 
+	    return sortedList;
+	}
+	
+	public static List<String> sortTheListWithInversedComparator(List<String> listOfWords)  {
+	    
+	    Comparator<String> inversed = (String o1, String o2) -> o2.compareTo(o1);
+	 
+	    List<String> sortedList = listOfWords
+	        .stream()
+	        .sorted(inversed)
+	        .collect(Collectors.toList());
+	 
+	    return sortedList;
+	}
+
 ```
 ---
