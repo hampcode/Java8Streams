@@ -185,3 +185,111 @@ Los métodos ``limit`` y ``skip`` recibes un ``long``.
 ```
 ---
 
+
+## 6. collect(Collectors)
+Operaciones como sum, max, min, avg, group by, etc., Se especifican en el método ``collect``.
+
+- ``Collectors.toList()`` Permite recopilar todos los elementos de un Stream en una instancia de List.
+- ``Collectors.counting()`` Permite contar todos los elementos de un Stream.
+- ``Collectors.summarizingDouble/Long/Int()``  Permite recopilar datos estadisticos (**count, sum, min, max** y **average**) sobre datos numericos.
+- ``Collectors.groupingBy()`` Permite agrupar elementos por alguna propiedad y almacenar resultados en una instancia de Map.
+- ``Collectors.averagingDouble/Long/Int()`` Permite agrupar elementos por alguna propiedad y almacenar resultados en una instancia de Map.
+- ``Collectors.max()/min()`` Permite agrupar elementos por alguna propiedad y almacenar resultados en una instancia de Map
+
+
+Lo mejor será revisar la documentación de la interfaz [Collectors](http://www.baeldung.com/java-8-collectors)
+
+Estos metodos lo aplicaremos ahora a un lista de objetos de tipo ``Product``.
+
+### 6.1. Collectors.groupingBy() 
+ * Filtrar todos los productos que en almacen tengan menos de 20 unidades de stock y agrupados por unidades de stock,
+
+```java
+    public static Map<Integer, List<Product>>  getFilterProductoGroupingByStock(List<Product> products)  {
+			Map<Integer, List<Product>> collect = products.stream()
+			        .filter(p -> p.getUnitsInStock() < 20)
+			        .collect(Collectors.groupingBy(Product::getUnitsInStock));
+			return collect;
+	}
+```
+
+
+### 6.2. Collectors.counting() 
+ * Obtener el número de productos agrupados por proveedor.
+
+```java
+    public static Map<Integer, Long>  getCountingProductoGroupingBySupplier(List<Product> products)  {
+		Map<Integer, Long> collect = products.stream()
+		        .collect( 
+		                Collectors.groupingBy( 
+		                        Product::getSupplier, 
+		                        Collectors.counting() 
+		                    )
+		                );
+		
+		return collect;
+	}
+```
+
+### 6.3. Collectors.summarizingDouble/Long/Int()
+ * Obtener la suma del precio unitario de todos los productos agrupados por el número de stock en el almacen.
+ * Obtener estas estadísticas respecto al precio unitario
+
+```java
+    public static Map<Integer, Double> getSummatizingUnitPriceGroupingByStock(List<Product> products)  {
+			
+		  Map<Integer, Double> collect = products.stream()
+		        .collect( 
+		                Collectors.groupingBy( 
+		                        Product::getUnitsInStock, 
+		                        Collectors.summingDouble( 
+		                                Product::getUnitPrice
+		                        )
+		                )
+		        );
+			return collect;
+	}
+
+
+	public static DoubleSummaryStatistics getStatisticsUnitPrice(List<Product> products)  {
+		
+		DoubleSummaryStatistics statistics =
+	            products.stream().collect(Collectors.summarizingDouble(Product::getUnitPrice));
+			
+			return statistics;
+	}
+```
+
+### 6.4. Collectors.averagingDouble/Long/Int()
+ * Obtener el promedio de stock en almacen
+
+```java
+    public static Double getAveragingStock(List<Product> products)  {
+				
+		Double average = products.stream()
+                .collect(Collectors.averagingInt(Product::getUnitsInStock));
+				
+				return average;
+	}
+```
+### 6.5. Collectors.max()/min()
+ * Producto con el precio unitario más alto
+
+```java
+    public static Optional<Product> getMaxUnitPriceProduct(List<Product> products)  {
+		
+		Optional<Product> product = products.stream().max(Comparator.comparing(Product::getUnitPrice));
+		
+		return product;
+		
+	}
+```
+---
+
+## 7. Referencias
+ * [Oracle Java SE -1](https://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html)
+ * [Oracle Java SE -1](http://www.oracle.com/technetwork/articles/java/architect-streams-pt2-2227132.html)
+ * [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html).
+ * [Comparator-Comparing](http://www.baeldung.com/java-8-comparator-comparing).
+ * [Collectors](http://www.baeldung.com/java-8-collectors)
+
