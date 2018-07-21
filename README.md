@@ -1,13 +1,6 @@
 
 ## 1. Introducción
-El 18 de marzo de 2014 se publicó la nueva versión de la plataforma Java 8 en la cual se incorporo varias novedades por mencionar algunas
- 
- * Data/Time API.
- * Defaults Methods.
- * Streams.
- * Lambdas.
-
-Java 8 representa una evolución notable en este lenguaje de programación. Para mas información de las novedades de Java 8 dejo los siguientes enlaces para revisar:
+El 18 de marzo de 2014 se publicó la nueva versión de la plataforma Java 8 en la cual se incorporo varias novedades lo cual represento una evolución notable en este lenguaje de programación. Para mas información de las novedades de Java 8 dejo los siguientes enlaces para revisar:
 
  * [Novedades de Java 8](http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html)
  * [JDK Features](http://openjdk.java.net/projects/jdk8/features#126)
@@ -193,7 +186,7 @@ Operaciones como sum, max, min, avg, group by, etc., Se especifican en el métod
 - ``Collectors.counting()`` Permite contar todos los elementos de un Stream.
 - ``Collectors.summarizingDouble/Long/Int()``  Permite recopilar datos estadisticos (**count, sum, min, max** y **average**) sobre datos numericos.
 - ``Collectors.groupingBy()`` Permite agrupar elementos por alguna propiedad y almacenar resultados en una instancia de Map.
-- ``Collectors.averagingDouble/Long/Int()`` Permite agrupar elementos por alguna propiedad y almacenar resultados en una instancia de Map.
+- ``Collectors.averagingDouble/Long/Int()`` Permite obtener el promedio de los elementos.
 - ``Collectors.max()/min()`` Permite agrupar elementos por alguna propiedad y almacenar resultados en una instancia de Map
 
 
