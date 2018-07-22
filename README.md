@@ -1,6 +1,6 @@
 
 ## 1. Introducción
-En marzo de 2014 se publicó la nueva versión de la plataforma Java 8  la cual represento una evolución notable en este lenguaje de programación. Para mas información dejo los siguientes enlaces.
+En marzo de 2014 se publicó la nueva versión de la plataforma Java 8  lo cual represento una evolución notable en este lenguaje de programación. Para mas información dejo los siguientes enlaces.
 
  * [Novedades de Java 8](http://www.oracle.com/technetwork/java/javase/8-whats-new-2157071.html)
  * [JDK Features](http://openjdk.java.net/projects/jdk8/features#126)
