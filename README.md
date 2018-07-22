@@ -8,7 +8,7 @@ En marzo de 2014 se publicó la nueva versión de la plataforma Java 8  represen
 ---
 
 ## 2. Interfaz Stream
-Stream en Java 8 es una alternativa mucho mas conveniente para poder iterar sobre una colección de datos de una manera declarativa. La ventaja de los streams es que pueden procesarse de forma secuencial o paralela.
+Stream en Java 8 es una alternativa mucho mas conveniente para poder iterar sobre una colección de datos de una manera declarativa. La ventaja de los Stream es que pueden procesarse de forma secuencial o paralela.
 
 Con respecto a las operaciones que se realizan son de 2 tipos.
  * Operaciones intermedias: realizan filtrado o transformación. 
