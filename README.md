@@ -8,15 +8,15 @@ En marzo de 2014 se publicó la nueva versión de la plataforma Java 8  represen
 ---
 
 ## 2. Interfaz Stream
-Stream en Java 8 es una alternativa mucho mas conveniente para poder iterar sobre una coleccion de datos de una manera declarativa. La ventaja de los streams es que pueden procesarse de forma serializada o paralela y proporcionan un estilo de operaciones mas funcionales.
+Stream en Java 8 es una alternativa mucho mas conveniente para poder iterar sobre una colección de datos de una manera declarativa. La ventaja de los streams es que pueden procesarse de forma secuencial o paralela.
 
 Con respecto a las operaciones que se realizan son de 2 tipos.
  * Operaciones intermedias: realizan filtrado o transformación. 
  * Operacion terminal: producen un resultado.
 
-Las operaciones intermedias son **lazy** porque se realizan cuando se invoca a la operacion final y  no necesitan en algunos casos procesar todos los elementos del stream para obtener un resultado.
+Las operaciones intermedias son **lazy** porque se realizan cuando se invoca a la operación final y  no necesitan en algunos casos procesar todos los elementos del stream para obtener un resultado.
 
-Con respecto a la iteracion sobre los elementos de un stream se expresa de forma interna a diferencia de una coleccion donde lo expresamos de forma externa. 
+Con respecto a la iteración sobre los elementos de un stream se expresa de forma interna a diferencia de una coleccion donde lo expresamos de forma externa. 
 
 ```java
 List<integer> numbersGreaterThan5 = numbers
