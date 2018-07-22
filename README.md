@@ -317,7 +317,7 @@ public static List<Product> getProducts(){
 
 ## 9. Referencias
  * [Oracle Java SE -1](https://www.oracle.com/technetwork/articles/java/ma14-java-se-8-streams-2177646.html)
- * [Oracle Java SE -1](http://www.oracle.com/technetwork/articles/java/architect-streams-pt2-2227132.html)
+ * [Oracle Java SE -2](http://www.oracle.com/technetwork/articles/java/architect-streams-pt2-2227132.html)
  * [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html).
  * [Comparator-Comparing](http://www.baeldung.com/java-8-comparator-comparing).
  * [Collectors](http://www.baeldung.com/java-8-collectors)
